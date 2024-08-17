@@ -23,7 +23,7 @@ const stack = [
 ]
 ---
 
-<PageLayout title="Servicios de Fotografía para Eventos en Málaga | Fyve Studio" description="En Fyve Studio ofrecemos servicios de fotografía profesional para eventos en Málaga. Capturamos y conservamos cada momento especial de tu evento con precisión y creatividad.">
+<PageLayout title="Videografía de Conciertos y Alquiler de Equipos en Málaga | Fyve Studio" description="En Fyve Studio ofrecemos servicios de videografía profesional para conciertos y alquiler de equipos en Málaga. Capturamos cada momento de tu evento con calidad excepcional y ofrecemos equipos de última generación para tus necesidades audiovisuales.">
 
   <!-- Light Mode: Particles -->
   <div class='absolute inset-0 block dark:hidden'>
@@ -65,12 +65,21 @@ const stack = [
             Bienvenido a Fyve Studio
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Fotografía Profesional para Eventos en Málaga
+            Videografía para Conciertos y Alquiler de Equipos en Málaga
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Capturamos cada momento especial de tu evento con precisión y creatividad.
+            Capturamos cada momento de tu evento con calidad excepcional y ofrecemos equipos de última generación para tus necesidades audiovisuales.
           </p>
-          
+          <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
+            <a href='/videodeconcierto' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+              Videografía de Conciertos
+            </a>
+            <a href='/alquilerequipos' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+              Alquiler de Equipos
+            </a>
+            <a href='/streamingconciertos' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+              Streaming para Conciertos
+            </a>
           </div>
         </div>
       </div>
@@ -79,21 +88,30 @@ const stack = [
 
   <!-- Gallery Section -->
   <section class="animate">
-    <h2 class="text-2xl font-bold text-center">Galería de Eventos</h2>
+    <h2 class="text-2xl font-bold text-center">Galería de Conciertos</h2>
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <!-- Photo 1 -->
+      <!-- Video 1 -->
       <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img src="/images/event-photo-1.jpg" alt="Fotografía de Evento 1" class="w-full h-auto object-cover"/>
+        <video controls class="w-full h-auto object-cover">
+          <source src="/videos/concert-video-1.mp4" type="video/mp4"/>
+          Tu navegador no soporta la etiqueta de video.
+        </video>
       </div>
 
+      <!-- Video 2 -->
       <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img src="/images/event-photo-1.jpg" alt="Fotografía de Evento 1" class="w-full h-auto object-cover"/>
+        <video controls class="w-full h-auto object-cover">
+          <source src="/videos/concert-video-2.mp4" type="video/mp4"/>
+          Tu navegador no soporta la etiqueta de video.
+        </video>
       </div>
 
-
-      <!-- Photo 2 -->
+      <!-- Video 3 -->
       <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img src="/images/event-photo-2.jpg" alt="Fotografía de Evento 2" class="w-full h-auto object-cover"/>
+        <video controls class="w-full h-auto object-cover">
+          <source src="/videos/concert-video-3.mp4" type="video/mp4"/>
+          Tu navegador no soporta la etiqueta de video.
+        </video>
       </div>
     </div>
   </section>
@@ -103,24 +121,25 @@ const stack = [
     <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
       <section class="animate">
         <article>
-          <p>En <b><i>Fyve Studio</i></b>, ofrecemos servicios integrales para eventos en Málaga. Desde <b><i>fotografía y videografía</i></b> hasta <b><i>streaming en vivo</i></b>, nos especializamos en capturar y transmitir cada momento importante de tus eventos.</p>
-          <p>Nuestro equipo está equipado con la última tecnología y técnicas avanzadas para asegurar que cada aspecto de tu evento sea documentado con la máxima calidad. Ya sea que se trate de una conferencia, una feria, una presentación o cualquier otro tipo de evento, estamos aquí para ofrecerte una cobertura completa.</p>
-          <p>Durante nuestra trayectoria, hemos trabajado en una amplia gama de eventos, adaptándonos a las necesidades específicas de cada cliente y proporcionando soluciones personalizadas para cada ocasión.</p>
-          <p>Ahora, en Fyve Studio, estamos comprometidos a ofrecerte un servicio excepcional que te permita disfrutar de tu evento mientras nosotros nos encargamos de capturar y transmitir cada detalle.</p>
+          <p>En <b><i>Fyve Studio</i></b>, somos expertos en la captura de conciertos y eventos en vivo. Nuestro equipo de videógrafos profesionales está capacitado para capturar la energía y la emoción de tus eventos musicales con una calidad cinematográfica, asegurando que cada detalle sea inmortalizado.</p>
+          <p>Además de nuestros servicios de videografía, ofrecemos un servicio completo de alquiler de equipos audiovisuales. Contamos con tecnología de última generación que garantiza que tu evento sea todo un éxito. Desde cámaras de alta definición hasta sistemas de sonido y luces, tenemos todo lo que necesitas para que tu concierto brille.</p>
+          <p>Nos enorgullece ofrecer un servicio integral que no solo captura la esencia de tu evento, sino que también proporciona las herramientas necesarias para que todo salga a la perfección. Con nuestra experiencia en la industria, estamos preparados para satisfacer todas tus necesidades audiovisuales.</p>
+          <p>Confía en Fyve Studio para capturar la magia de tus conciertos y proporcionar el equipo necesario para que cada detalle sea perfecto.</p>
         </article>
       </section>
       
       <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
-        <a href="https://wa.me/34641437667"  class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
-          contactanos a traves de chat
+        <a href="https://wa.me/34641437667" class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+          Contáctanos a través de chat
         </a>
         <a href="tel:+34641437667" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
-          Llamanos
+          Llámanos
         </a>
         <a href="mailto:info@fyvestudio.pro" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
-            Mandanos un mail
-          </a>
-      
+          Mándanos un email
+        </a>
+      </div>
     </div>
   </div>
 </PageLayout>
+---

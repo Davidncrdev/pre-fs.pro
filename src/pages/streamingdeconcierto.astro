@@ -22,7 +22,7 @@ const stack = [
 ]
 ---
 
-<PageLayout title="Servicios para Bodas en Málaga | Fyve Studio Pro" description="Fyve Studio Pro ofrece servicios completos para bodas en Málaga, incluyendo fotografía, videografía, y diseño web especializado para eventos. Captura los momentos más especiales de tu día con nosotros.">
+<PageLayout title="Streaming de Conciertos en Málaga | Fyve Studio" description="Fyve Studio ofrece servicios de streaming en vivo para conciertos en Málaga. Transmitimos tu evento en alta calidad para que llegue a todo el mundo.">
 
   <!-- Light Mode: Particles -->
   <div class='absolute inset-0 block dark:hidden'>
@@ -61,23 +61,36 @@ const stack = [
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Bienvenido a Fyve Studio Pro
+            Bienvenido a Fyve Studio
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Servicios para Bodas en Málaga
+            Streaming en Vivo para Conciertos
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Especialistas en capturar cada momento especial de tu boda.
+            Transmitimos tu evento en alta calidad para que llegue a todo el mundo.
           </p>
-          <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
-            <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
-              Lee nuestro blog
-            </a>
-            <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
-              Descubre nuestros trabajos
-            </a>
-          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concert Streaming Gallery Section -->
+  <section class="animate">
+    <h2 class="text-2xl font-bold text-center">Galería de Conciertos en Streaming</h2>
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <!-- Concert Streaming 1 -->
+      <div class="relative overflow-hidden rounded-lg shadow-lg">
+        <img src="/images/concert-stream-1.jpg" alt="Streaming de Concierto 1" class="w-full h-auto object-cover"/>
+      </div>
+
+      <!-- Concert Streaming 2 -->
+      <div class="relative overflow-hidden rounded-lg shadow-lg">
+        <img src="/images/concert-stream-2.jpg" alt="Streaming de Concierto 2" class="w-full h-auto object-cover"/>
+      </div>
+
+      <!-- Concert Streaming 3 -->
+      <div class="relative overflow-hidden rounded-lg shadow-lg">
+        <img src="/images/concert-stream-3.jpg" alt="Streaming de Concierto 3" class="w-full h-auto object-cover"/>
       </div>
     </div>
   </section>
@@ -87,12 +100,24 @@ const stack = [
     <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
       <section class="animate">
         <article>
-          <p>En <b><i>Fyve Studio Pro</i></b>, nos especializamos en <b><i>fotografía y videografía para bodas</i></b>. Nuestro objetivo es capturar los momentos más especiales y emotivos de tu gran día.</p>
-          <p>Nuestro equipo está compuesto por profesionales apasionados por la creación de recuerdos duraderos. Utilizamos la última tecnología y técnicas creativas para asegurarnos de que cada detalle sea inmortalizado de la mejor manera posible.</p>
-          <p>Durante nuestra trayectoria, hemos trabajado en una variedad de bodas, desde ceremonias íntimas hasta grandes celebraciones, siempre con un enfoque en la calidad y la personalización.</p>
-          <p>Ahora, en Fyve Studio Pro, nos dedicamos a ofrecer un servicio integral para tu boda, garantizando que cada momento sea capturado con precisión y belleza.</p>
+          <p>En <b><i>Fyve Studio</i></b>, ofrecemos servicios de <b><i>streaming en vivo para conciertos</i></b> en Málaga. Llevamos la experiencia de tus conciertos a una audiencia global con transmisiones de alta calidad y sin interrupciones.</p>
+          <p>Utilizamos tecnología avanzada para garantizar que cada momento del concierto se capture con claridad y se transmita en tiempo real, brindando a tu público la mejor experiencia, sin importar dónde se encuentren.</p>
+          <p>Con nuestra experiencia en la transmisión de eventos en vivo, nos aseguramos de que tu concierto llegue a todos tus fans, ya sea en su hogar o en cualquier parte del mundo. Nos encargamos de todo, desde la captura de video y audio hasta la transmisión en las plataformas de tu elección.</p>
+          <p>Confía en Fyve Studio para que tu concierto alcance nuevas alturas con nuestros servicios de streaming en vivo.</p>
         </article>
       </section>
+      
+      <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
+        <a href="https://wa.me/34641437667"  class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+          Contáctanos a través de chat
+        </a>
+        <a href="tel:+34641437667" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+          Llámanos
+        </a>
+        <a href="mailto:info@fyvestudio.pro" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+          Mándanos un email
+        </a>
+      </div>
     </div>
   </div>
 </PageLayout>
