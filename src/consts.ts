@@ -2,33 +2,33 @@ import type { Site, Page, Links, Socials } from "@types"
 
 // Global
 export const SITE: Site = {
-  TITLE: "Astro Sphere",
-  DESCRIPTION: "Welcome to Astro Sphere, a portfolio and blog for designers and developers.",
-  AUTHOR: "Mark Horn",
+  TITLE: "Fyve Studio",
+  DESCRIPTION: "Fyve Studio ofrece servicios integrales de fotografía, videografía, streaming en vivo y diseño web en Málaga.",
+  AUTHOR: "Fyve Studio",
 }
 
 // Work Page
 export const WORK: Page = {
   TITLE: "Work",
-  DESCRIPTION: "Places I have worked.",
+  DESCRIPTION: "Nuestros proyectos y trabajos recientes.",
 }
 
 // Blog Page
 export const BLOG: Page = {
   TITLE: "Blog",
-  DESCRIPTION: "Writing on topics I am passionate about.",
+  DESCRIPTION: "Artículos sobre temas apasionantes y tendencias en el sector.",
 }
 
-// Projects Page 
+// Projects Page
 export const PROJECTS: Page = {
   TITLE: "Projects",
-  DESCRIPTION: "Recent projects I have worked on.",
+  DESCRIPTION: "Proyectos recientes en los que hemos trabajado.",
 }
 
 // Search Page
 export const SEARCH: Page = {
   TITLE: "Search",
-  DESCRIPTION: "Search all posts and projects by keyword.",
+  DESCRIPTION: "Buscar todos los posts y proyectos por palabra clave.",
 }
 
 // Links
@@ -56,26 +56,25 @@ export const SOCIALS: Socials = [
   { 
     NAME: "Email",
     ICON: "email", 
-    TEXT: "markhorn.dev@gmail.com",
-    HREF: "mailto:markhorn.dev@gmail.com",
+    TEXT: "contacto@fystudio.com",
+    HREF: "mailto:contacto@fystudio.com",
   },
   { 
     NAME: "Github",
     ICON: "github",
-    TEXT: "markhorn-dev",
-    HREF: "https://github.com/markhorn-dev/astro-sphere"
+    TEXT: "fyve-studio",
+    HREF: "https://github.com/fyve-studio",
   },
   { 
     NAME: "LinkedIn",
     ICON: "linkedin",
-    TEXT: "markhorn-dev",
-    HREF: "https://www.linkedin.com/in/markhorn-dev/",
+    TEXT: "fyve-studio",
+    HREF: "https://www.linkedin.com/company/fyve-studio/",
   },
   { 
     NAME: "Twitter",
     ICON: "twitter-x",
-    TEXT: "markhorn_dev",
-    HREF: "https://twitter.com/markhorn_dev",
+    TEXT: "fyve_studio",
+    HREF: "https://twitter.com/fyve_studio",
   },
 ]
-

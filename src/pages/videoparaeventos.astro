@@ -1,0 +1,148 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TwinklingStars from "@components/TwinklingStars.astro"
+import MeteorShower from "@components/MeteorShower.astro"
+
+const posts = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+
+const projects = (await getCollection("projects"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+
+const stack = [
+  { text: "Astro", icon: "astro", href: "https://astro.build" },
+  { text: "Javascript", icon: "javascript", href: "https://www.javascript.com" },
+  { text: "Typescript", icon: "typescript", href: "https://www.typescriptlang.org" },
+  { text: "Tailwind", icon: "tailwind", href: "https://tailwindcss.com" },
+]
+---
+
+<PageLayout title="Servicios de Videografía para Eventos en Málaga | Fyve Studio" description="Fyve Studio ofrece servicios profesionales de videografía para eventos en Málaga. Captura cada momento con video de alta calidad y edición profesional.">
+
+  <!-- Light Mode: Particles -->
+  <div class='absolute inset-0 block dark:hidden'>
+    <div id='particles1' class='fixed inset-0'></div>
+    <div id='particles2' class='fixed inset-0'></div>
+    <div id='particles3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Stars -->
+  <div class='absolute inset-0 bg-black hidden dark:block'>
+    <div id='stars1' class='fixed inset-0'></div>
+    <div id='stars2' class='fixed inset-0'></div>
+    <div id='stars3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Twinkling Stars / Meteors -->
+  <div id="galaxy" class="fixed inset-0">
+    <div class="hidden dark:block">
+      <TwinklingStars/>
+      <MeteorShower/>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bg.js"></script>
+  
+  <!-- HERO -->
+  <section class="relative h-screen w-full">
+    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden'>
+      <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%'>
+        <div id="planet" class='w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center'>
+          <div id="blur" class='w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl'/>
+        </div>
+      </div>
+    </div>
+    <div class="animate absolute h-full w-full flex items-center justify-center">
+      <div class='relative w-full h-full flex items-center justify-center'>
+        <div class='p-5 text-center'>
+          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
+            Bienvenido a Fyve Studio
+          </p>
+          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
+            Videografía Profesional para Eventos en Málaga
+          </p>
+          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
+            Capturamos cada momento especial de tu evento con video de alta calidad y edición profesional.
+          </p>
+          <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
+            <a href='/fotografiadeeventos' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+              Fotografía de Eventos
+            </a>
+            <a href='/videoparaeventos' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+              Videografía para Eventos
+            </a>
+            <a href='/streamingparaeventos' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+              Streaming para Eventos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Video Examples Section -->
+      <section class="animate">
+        <h2 class="text-2xl font-bold text-center">Ejemplos de Nuestro Trabajo</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Video 1 -->
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <video controls class="w-full h-auto">
+              <source src="/videos/event-video-1.mp4" type="video/mp4"/>
+              Tu navegador no soporta el formato de video.
+            </video>
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-white text-sm">
+              Video de Evento 1
+            </div>
+          </div>
+          <!-- Video 2 -->
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <video controls class="w-full h-auto">
+              <source src="/videos/event-video-2.mp4" type="video/mp4"/>
+              Tu navegador no soporta el formato de video.
+            </video>
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-white text-sm">
+              Video de Evento 2
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <!-- About Section -->
+  <div class="relative bg-white dark:bg-black">
+    <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
+      <section class="animate">
+        <article>
+          <p>En <b><i>Fyve Studio</i></b>, ofrecemos servicios integrales de videografía para eventos en Málaga. Desde la grabación de alta calidad hasta la edición profesional, nos especializamos en capturar cada momento de tus eventos de manera cinematográfica.</p>
+          <p>Contamos con equipo de última tecnología y técnicas avanzadas para garantizar que cada aspecto de tu evento sea documentado con la máxima calidad. Ya sea que se trate de una conferencia, una feria, una presentación o cualquier otro tipo de evento, nuestro equipo está preparado para ofrecer una cobertura completa y profesional.</p>
+          <p>Hemos trabajado en una amplia variedad de eventos, adaptándonos a las necesidades específicas de cada cliente y ofreciendo soluciones personalizadas para cada ocasión. En Fyve Studio, nos comprometemos a entregar videos que no solo capturen los momentos importantes, sino que también cuenten una historia memorable.</p>
+          <p>Permítenos encargarnos de la videografía de tu evento para que puedas disfrutarlo mientras nosotros capturamos y editamos cada detalle.</p>
+        </article>
+      </section>
+
+      
+
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
+          ¿Listo para empezar?
+        </h2>
+
+      <!-- CTA Section -->
+      <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
+        <a href="https://wa.me/34641437667"  class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+          contactanos a traves de chat
+        </a>
+        <a href="tel:+34641437667" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+          Llamanos
+        </a>
+        <a href="mailto:info@fyvestudio.pro" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+            Mandanos un mail
+          </a>
+    </div>
+  </div>
+</PageLayout>

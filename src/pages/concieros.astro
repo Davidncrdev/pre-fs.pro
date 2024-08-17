@@ -7,38 +7,22 @@ import MeteorShower from "@components/MeteorShower.astro"
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .slice(0, 3)
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .slice(0, 3)
 
 const stack = [
-  { 
-    text: "Astro", 
-    icon: "astro", 
-    href: "https://astro.build" 
-  },
-  { 
-    text: "Javascript", 
-    icon: "javascript", 
-    href: "https://www.javascript.com" 
-  },
-  { 
-    text: "Typescript", 
-    icon: "typescript", 
-    href: "https://www.typescriptlang.org" 
-  },
-  { 
-    text: "Tailwind", 
-    icon: "tailwind", 
-    href: "https://tailwindcss.com" 
-  },
+  { text: "Astro", icon: "astro", href: "https://astro.build" },
+  { text: "Javascript", icon: "javascript", href: "https://www.javascript.com" },
+  { text: "Typescript", icon: "typescript", href: "https://www.typescriptlang.org" },
+  { text: "Tailwind", icon: "tailwind", href: "https://tailwindcss.com" },
 ]
 ---
 
-<PageLayout title="Servicios Multimedia en Málaga | Fyve Studio Pro" description="Fyve Studio Pro ofrece servicios integrales de fotografía, videografía, consultoría audiovisual y creación de páginas web en Málaga. Soluciones creativas para bodas, eventos y empresas.">
+<PageLayout title="Servicios para Bodas en Málaga | Fyve Studio Pro" description="Fyve Studio Pro ofrece servicios completos para bodas en Málaga, incluyendo fotografía, videografía, y diseño web especializado para eventos. Captura los momentos más especiales de tu día con nosotros.">
 
   <!-- Light Mode: Particles -->
   <div class='absolute inset-0 block dark:hidden'>
@@ -54,7 +38,7 @@ const stack = [
     <div id='stars3' class='fixed inset-0'></div>
   </div>
 
-  <!-- Dark Theme: Twinkling Stars / Metors -->
+  <!-- Dark Theme: Twinkling Stars / Meteors -->
   <div id="galaxy" class="fixed inset-0">
     <div class="hidden dark:block">
       <TwinklingStars/>
@@ -80,16 +64,16 @@ const stack = [
             Bienvenido a Fyve Studio Pro
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Servicios multimedia en Málaga
+            Servicios para Bodas en Málaga
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Especialistas en fotografía, videografía, y diseño web.
+            Especialistas en capturar cada momento especial de tu boda.
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
-            <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
+            <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
               Lee nuestro blog
             </a>
-            <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
+            <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
               Descubre nuestros trabajos
             </a>
           </div>
@@ -98,22 +82,17 @@ const stack = [
     </div>
   </section>
 
+  <!-- About Section -->
   <div class="relative bg-white dark:bg-black">
     <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
-
-      <!-- About Section -->
       <section class="animate">
         <article>
-          <p>Somos un <b><i>estudio creativo en Málaga</i></b> especializado en <b><i>servicios multimedia</i></b>, <b><i>producción audiovisual</i></b>, <b><i>diseño web</i></b>, y <b><i>consultoría audiovisual</i></b>.</p>
-          <p>Nuestra pasión es crear soluciones visuales impactantes y dinámicas. Nos motiva cada proyecto desafiante, en el que aplicamos investigación autodirigida y resolución creativa de problemas. Nuestro enfoque principal es ofrecer productos con un diseño frontal creativo, con una visión única sobre color, tipografía y movimiento.</p>
-          <p>Durante nuestra trayectoria</p>
-          <p>Hemos desarrollado desde páginas web para empresas hasta aplicaciones empresariales complejas, siempre con el objetivo de entregar código rápido y elegante junto con interfaces de usuario atractivas.</p>
-          <p>Ahora</p>
-          <p>Trabajamos en Fyve Studio Pro, donde nos dedicamos a la planificación, diseño y desarrollo de productos multimedia.</p>
+          <p>En <b><i>Fyve Studio Pro</i></b>, nos especializamos en <b><i>fotografía y videografía para bodas</i></b>. Nuestro objetivo es capturar los momentos más especiales y emotivos de tu gran día.</p>
+          <p>Nuestro equipo está compuesto por profesionales apasionados por la creación de recuerdos duraderos. Utilizamos la última tecnología y técnicas creativas para asegurarnos de que cada detalle sea inmortalizado de la mejor manera posible.</p>
+          <p>Durante nuestra trayectoria, hemos trabajado en una variedad de bodas, desde ceremonias íntimas hasta grandes celebraciones, siempre con un enfoque en la calidad y la personalización.</p>
+          <p>Ahora, en Fyve Studio Pro, nos dedicamos a ofrecer un servicio integral para tu boda, garantizando que cada momento sea capturado con precisión y belleza.</p>
         </article>
       </section>
-
-      
     </div>
   </div>
 </PageLayout>
