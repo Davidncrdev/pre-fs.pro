@@ -1,15 +1,7 @@
-function generateParticles(n) {
-  let value = `${getRandom(2560)}px ${getRandom(2560)}px #ff0000`;
+function generateElements(n, color) {
+  let value = `${getRandom(2560)}px ${getRandom(2560)}px ${color}`;
   for (let i = 2; i <= n; i++) {
-    value += `, ${getRandom(2560)}px ${getRandom(2560)}px #ff0000`;
-  }
-  return value;
-}
-
-function generateStars(n) {
-  let value = `${getRandom(2560)}px ${getRandom(2560)}px #ff0000`;
-  for (let i = 2; i <= n; i++) {
-    value += `, ${getRandom(2560)}px ${getRandom(2560)}px #ff0000`;
+    value += `, ${getRandom(2560)}px ${getRandom(2560)}px ${color}`;
   }
   return value;
 }
@@ -18,77 +10,34 @@ function getRandom(max) {
   return Math.floor(Math.random() * max);
 }
 
+function applyStyle(element, size, boxShadow, animation) {
+  if (element) {
+    element.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      border-radius: 50%;
+      box-shadow: ${boxShadow};
+      ${animation ? `animation: ${animation};` : ''}
+    `;
+  }
+}
+
 function initBG() {
-  const particlesSmall = generateParticles(1000);
-  const particlesMedium = generateParticles(500);
-  const particlesLarge = generateParticles(250);
-  const particles1 = document.getElementById('particles1');
-  const particles2 = document.getElementById('particles2');
-  const particles3 = document.getElementById('particles3');
+  const particlesSmall = generateElements(100, '#ff0000');
+  const particlesMedium = generateElements(500, '#ff0000');
+  const particlesLarge = generateElements(250, '#ff0000');
 
-  if (particles1) {
-    particles1.style.cssText = `
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    box-shadow: ${particlesSmall};
-    animation: animStar 50s linear infinite;
-    `;
-  }
+  applyStyle(document.getElementById('particles1'), 1, particlesSmall, 'animStar 50s linear infinite');
+  applyStyle(document.getElementById('particles2'), 1.5, particlesMedium, 'animateParticle 100s linear infinite');
+  applyStyle(document.getElementById('particles3'), 2, particlesLarge, 'animateParticle 150s linear infinite');
 
-  if (particles2) {
-    particles2.style.cssText = `
-    width: 1.5px;
-    height: 1.5px;
-    border-radius: 50%;
-    box-shadow: ${particlesMedium};
-    animation: animateParticle 100s linear infinite;
-    `;
-  }
+  const starsSmall = generateElements(1000, '#ff0000');
+  const starsMedium = generateElements(500, '#ff0000');
+  const starsLarge = generateElements(2500, '#ff0000');
 
-  if (particles3) {
-    particles3.style.cssText = `
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    box-shadow: ${particlesLarge};
-    animation: animateParticle 150s linear infinite;
-    `;
-  }
-
-  const starsSmall = generateStars(1000);
-  const starsMedium = generateStars(500);
-  const starsLarge = generateStars(2500);
-  const stars1 = document.getElementById('stars1');
-  const stars2 = document.getElementById('stars2');
-  const stars3 = document.getElementById('stars3');
-
-  if (stars1) {
-    stars1.style.cssText = `
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    box-shadow: ${starsSmall};
-    `;
-  }
-
-  if (stars2) {
-    stars2.style.cssText = `
-    width: 1.5px;
-    height: 1.5px;
-    border-radius: 50%;
-    box-shadow: ${starsMedium};
-    `;
-  }
-
-  if (stars3) {
-    stars3.style.cssText = `
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    box-shadow: ${starsLarge};
-    `;
-  }
+  applyStyle(document.getElementById('stars1'), 1, starsSmall, null);
+  applyStyle(document.getElementById('stars2'), 1.5, starsMedium, null);
+  applyStyle(document.getElementById('stars3'), 2, starsLarge, null);
 }
 
 document.addEventListener('astro:after-swap', initBG);
