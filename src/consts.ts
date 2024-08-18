@@ -34,20 +34,25 @@ export const SEARCH: Page = {
 // Links
 export const LINKS: Links = [
   { 
-    TEXT: "Home", 
+    TEXT: "Inicio", 
     HREF: "/", 
   },
   { 
-    TEXT: "Work", 
-    HREF: "/work", 
+    TEXT: "Bodas", 
+    HREF: "/bodas", 
   },
   { 
-    TEXT: "Blog", 
-    HREF: "/blog", 
+    TEXT: "Eventos", 
+    HREF: "/evnetos", 
   },
   { 
-    TEXT: "Projects", 
-    HREF: "/projects", 
+    TEXT: "Webs", 
+    HREF: "/webs", 
+  },
+  {
+    TEXT: "TEAM",
+    HREF:"/team"
+
   },
 ]
 
