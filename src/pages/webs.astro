@@ -1,0 +1,162 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TwinklingStars from "@components/TwinklingStars.astro"
+import MeteorShower from "@components/MeteorShower.astro"
+
+const posts = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+
+const projects = (await getCollection("projects"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+
+const stack = [
+  { text: "Astro", icon: "astro", href: "https://astro.build" },
+  { text: "Javascript", icon: "javascript", href: "https://www.javascript.com" },
+  { text: "Typescript", icon: "typescript", href: "https://www.typescriptlang.org" },
+  { text: "Tailwind", icon: "tailwind", href: "https://tailwindcss.com" },
+]
+---
+
+<PageLayout title="Creación de Páginas Web y Gestión de Marketing Digital | Fyve Studio" description="En Fyve Studio, ofrecemos servicios profesionales de creación de páginas web y gestión de marketing digital. Diseñamos estrategias digitales que potencian tu presencia en línea y atraen a tus clientes ideales.">
+
+  <!-- Light Mode: Particles -->
+  <div class='absolute inset-0 block dark:hidden'>
+    <div id='particles1' class='fixed inset-0'></div>
+    <div id='particles2' class='fixed inset-0'></div>
+    <div id='particles3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Stars -->
+  <div class='absolute inset-0 bg-black hidden dark:block'>
+    <div id='stars1' class='fixed inset-0'></div>
+    <div id='stars2' class='fixed inset-0'></div>
+    <div id='stars3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Twinkling Stars / Meteors -->
+  <div id="galaxy" class="fixed inset-0">
+    <div class="hidden dark:block">
+      <TwinklingStars/>
+      <MeteorShower/>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bg.js"></script>
+  
+  <!-- HERO -->
+  <section class="relative h-screen w-full">
+    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden'>
+      <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%'>
+        <div id="planet" class='w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center'>
+          <div id="blur" class='w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl'/>
+        </div>
+      </div>
+    </div>
+    <div class="animate absolute h-full w-full flex items-center justify-center">
+      <div class='relative w-full h-full flex items-center justify-center'>
+        <div class='p-5 text-center'>
+          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
+            Lleva tu negocio al siguiente nivel
+          </p>
+          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
+            Creación de Páginas Web y Marketing Digital
+          </p>
+          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
+            Transformamos tu presencia en línea con diseños impactantes y estrategias de marketing efectivas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="animate bg-white dark:bg-black py-10">
+    <h2 class="text-2xl font-bold text-center mb-6">Nuestros Servicios</h2>
+    <div class="max-w-screen-lg mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Web Development -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg bg-gray-100 dark:bg-gray-800 p-5">
+          <h3 class="text-xl font-semibold">Creación de Páginas Web</h3>
+          <p class="mt-2">Diseñamos y desarrollamos páginas web personalizadas, optimizadas para ofrecer la mejor experiencia de usuario. Nuestros sitios son rápidos, seguros y están diseñados para atraer y convertir a tus visitantes.</p>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg bg-gray-100 dark:bg-gray-800 p-5">
+          <h3 class="text-xl font-semibold">Gestión de Marketing Digital</h3>
+          <p class="mt-2">Implementamos estrategias de marketing digital que incluyen SEO, SEM, gestión de redes sociales y campañas publicitarias para aumentar la visibilidad de tu marca y generar resultados medibles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="animate bg-gray-100 dark:bg-gray-900 py-10">
+    <h2 class="text-2xl font-bold text-center mb-6">¿Por qué Elegirnos?</h2>
+    <div class="max-w-screen-lg mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <!-- Experience -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg p-5">
+          <h3 class="text-xl font-semibold">Experiencia y Conocimiento</h3>
+          <p class="mt-2">Nuestro equipo cuenta con años de experiencia en desarrollo web y marketing digital, asegurando que cada proyecto sea un éxito.</p>
+        </div>
+
+        <!-- Innovation -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg p-5">
+          <h3 class="text-xl font-semibold">Innovación y Creatividad</h3>
+          <p class="mt-2">Nos mantenemos a la vanguardia de las últimas tendencias y tecnologías para ofrecer soluciones innovadoras y creativas.</p>
+        </div>
+
+        <!-- Results -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg p-5">
+          <h3 class="text-xl font-semibold">Resultados Medibles</h3>
+          <p class="mt-2">Nos enfocamos en obtener resultados reales para tu negocio, con campañas y sitios web diseñados para maximizar el retorno de inversión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="animate bg-white dark:bg-black py-10">
+    <h2 class="text-2xl font-bold text-center mb-6">Lo Que Dicen Nuestros Clientes</h2>
+    <div class="max-w-screen-lg mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg p-5 bg-gray-100 dark:bg-gray-800">
+          <p class="mt-2">"Fyve Studio transformó nuestra presencia en línea. Su equipo creó un sitio web que no solo se ve increíble, sino que también funciona a la perfección."</p>
+          <p class="mt-4 font-semibold">- Cliente Satisfecho</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg p-5 bg-gray-100 dark:bg-gray-800">
+          <p class="mt-2">"Gracias a su estrategia de marketing digital, hemos visto un aumento significativo en el tráfico y las conversiones en nuestro sitio."</p>
+          <p class="mt-4 font-semibold">- Cliente Satisfecho</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="relative bg-white dark:bg-black py-10">
+    <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16 text-center">
+      <h2 class="text-2xl font-bold">¿Listo para Empezar?</h2>
+      <p>Contacta con nosotros hoy mismo para discutir cómo podemos ayudarte a transformar tu presencia en línea y llevar tu negocio al siguiente nivel.</p>
+      <div class='animated flex flex-wrap gap-4 justify-center mt-5'>
+        <a href="https://wa.me/34641437667"  class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75'>
+          Contáctanos a través de chat
+        </a>
+        <a href="tel:+34641437667" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+          Llámanos
+        </a>
+        <a href="mailto:info@fyvestudio.pro" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15'>
+          Mándanos un email
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
